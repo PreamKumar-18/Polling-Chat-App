@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Polling and Chat App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="poll-section">
+            <h2>Create a Poll</h2>
+            <input type="text" id="poll-question" placeholder="Enter your poll question">
+            <input type="text" id="option1" placeholder="Option 1">
+            <input type="text" id="option2" placeholder="Option 2">
+            <button id="create-poll-button">Create Poll</button>
+        </div>
+        <div class="poll-results">
+            <h2>Poll Results</h2>
+            <div id="poll-question-display"></div>
+            <!-- <div id="poll-options-display"> -->
+                <div class="poll-options">
+                    <div class="option">
+                        <input type="radio" name="poll-option" id="option1-text">
+                        <label for="option1-text" id="option1-label">Option 1</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="poll-option" id="option2-text">
+                        <label for="option2-text" id="option2-label">Option 2</label>
+                    </div>
+                </div>
+            </div>
+            <button id="vote-button">Vote</button>
+        </div>
+      
+        <div class="vote-results">
+            <h2>Vote Results</h2>
+            <p> <span id="option1-count">0</span> votes</p>
+<p><span id="option2-count">0</span> votes</p>
+        </div>
+    </div>
+    <div class="chat">
+        <h1>Chat</h1>
+        <div class="chat-history" id="chat-history">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div id="typing-indicator" style="display: none;">
+            Typing...
+        </div>
+        <input type="text" id="chat-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
